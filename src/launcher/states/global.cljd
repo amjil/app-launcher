@@ -1,0 +1,7 @@
+(ns launcher.states.global
+  (:require 
+   ["package:flutter/material.dart" :as m]))
+
+(def state
+  (atom
+   {}))

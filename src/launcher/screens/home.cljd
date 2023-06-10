@@ -1,0 +1,27 @@
+(ns launcher.screens.home
+  (:require
+   ["package:flutter/material.dart" :as m]
+   ["package:mongol/mongol.dart" :as mgl]
+   [launcher.services.auth :as auth-service]
+   [cljd.flutter.alpha2 :as f]))
+
+(defn ^m/Widget home-screen [ctx]
+  (f/widget
+   :get [m/Navigator]
+   (m/Scaffold
+    ;; .appBar (m/AppBar
+    ;;          .title (m/Text "Home Screen"))
+    .body
+    (m/SafeArea
+     .child
+     (m/Column
+      .children [(m/TextButton
+                  .onPressed (fn [] 
+                               (dart:core/print "hello"))
+                  .child (m/Text "hello there"))
+                 (m/Center
+                  .child (mgl/MongolText
+                          "Hello World"
+                          .style (m/TextStyle
+                                  .color m.Colors/blue
+                                  .fontSize 32.0)))])))))

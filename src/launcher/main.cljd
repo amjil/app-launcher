@@ -1,0 +1,17 @@
+(ns launcher.main
+  (:require
+   ["package:flutter/material.dart" :as m]
+   ["package:mongol/mongol.dart" :as mgl]
+   [cljd.flutter.alpha2 :as f]
+   [launcher.common.theme :as theme]
+   [launcher.screens.home :as home]))
+
+(defn main []
+  (m/runApp
+   (m/MaterialApp
+    .title "Welcome to Flutter"
+    .theme theme/default-light-theme
+    .darkTheme theme/default-dark-theme
+    .initialRoute "/"
+    .routes       {"/" home/home-screen}
+    .debugShowCheckedModeBanner false)))
